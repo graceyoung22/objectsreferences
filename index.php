@@ -148,4 +148,59 @@ print_r($obj);
 print("Cloned Object:\n");
 print_r($obj2);
 
+
+//Reflection Example
+	//reflection API that adds the ability to reverse-engineer classes, 
+	//interfaces, functions, methods, and extenstion. Also offers ways
+	//to retrieve doc comments from functions, classes and methods
+
+// Manager.php
+require_once './Editor.php';
+require_once './Nettus.php';
+class Manager {
+	function doJobFor(DateTime $date) {
+		if ((new DateTime())->getTimestanp() > $date->getTimestamp()) {
+			$editor = new Editor('John Doe');
+			$nettuts = new Nettuts()
+			$nettuts->publishNextArticle($editor);
+		}
+	}
+}
+
+
+//Pass by reference vs. Pass by value
+
+function pass_by_value($param) {
+	push_array($param, 4, 5);
+}
+$ar = array(1, 2, 3);
+pass_by_value($ar);
+foreach ($ar as $elem) {
+	print "<br>$elem";
+}
+//The code above prints 1, 2, 3. This is because the array is passed as value
+function pass_by_reference(&$param) {
+        push_array($param, 4, 5);
+}
+$ar = array(1, 2, 3);
+pass_by_value($ar);
+foreach ($ar as $elem) {
+        print "<br>$elem";
+}
+//The code above prints 1, 2, 3, 4, 5. This is because the array is passed as 
+	//reference, meaning the function doesn't manipulate a copy of the 
+	//variable passed, but the actual variable itself
+
+//In order to make a variable be passed by reference, it must be declared
+	//with a receeding ampersand (&) in the function's declaration
+
+
+
+
+
+
+
+
+
+
 ?>
